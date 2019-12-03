@@ -1,6 +1,8 @@
 export class Quote {
-    id:number;
-    name:string;
-    author:string;
-    completeDate:Date;
-}
+    showInfo: boolean;
+      constructor(public id: number, public name: string, public publishDate)
+                  {
+                    this.showInfo = false;
+                  }
+  }
+
