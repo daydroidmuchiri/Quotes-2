@@ -1,0 +1,27 @@
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-md-6">
+            <app-quote-form (addNew)="addNewQuote($event)"></app-quote-form>
+        </div>
+        <div class="col-md-6">
+            <h1>Quotes</h1>
+            <hr>
+            <div *ngFor='let quote of quotes;let i=index' class="card mb-3">
+                <div class="card-body">
+                    <h3 class="card-text">{{quote.quotename}}</h3>
+                </div>
+                <div class="card-footer">
+                    <span class="card-subtitle mb-2">Posted by:
+              <span id="name">{{quote.user}}</span>
+                    <span id="date" class="float-right">
+                <span id="datecolor">{{quote.datePosted|date}}</span>
+                    </span>
+                    </span>
+                    <div>
+                        <app-quote-details [quote]='quote' (isRead)='quoteDelete($event,i)'></app-quote-details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

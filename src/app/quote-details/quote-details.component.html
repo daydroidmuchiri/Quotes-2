@@ -1,0 +1,7 @@
+<h6 class="card-subtitle my-2 text-muted"> Author: {{quote.author}}
+    <span id="when" class="float-right">Posted: {{quote.datePosted | dateCount }} days ago.</span>
+</h6>
+
+<span class="btn btn-sm btn-success" (click)="upvote()">{{quote.likes}} Upvote</span>
+<span class="btn btn-sm btn-warning ml-3" id="hate" (click)="downvote()">{{quote.dislike}} Downvote</span>
+<span class="btn btn-sm btn-danger" id="del" (click)='deleteQuote(true)'>Delete</span>
